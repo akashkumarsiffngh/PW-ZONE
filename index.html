@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Access Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -24,7 +25,7 @@
         .container {
             width: 100%;
             max-width: 500px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
@@ -92,6 +93,14 @@
             padding: 15px;
             border-radius: 8px;
             font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 20px;
         }
         
         .btn-1 {
@@ -118,6 +127,14 @@
             background: #8e44ad;
         }
         
+        .btn-4 {
+            background: #f39c12;
+        }
+        
+        .btn-4:hover {
+            background: #d35400;
+        }
+        
         .message {
             color: #e74c3c;
             font-weight: 500;
@@ -131,33 +148,59 @@
             font-size: 14px;
             background: #f9f9f9;
         }
+        
+        @media (max-width: 500px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Secure Access Portal</h1>
+            <h1><i class="fas fa-lock"></i> Secure Access Portal</h1>
             <p>Please authenticate to access the resources</p>
         </div>
         
         <div class="content">
             <div class="login-section">
                 <input type="password" id="passwordInput" placeholder="Enter access code" autocomplete="off">
-                <button id="loginBtn">LOGIN</button>
+                <button id="loginBtn"><i class="fas fa-sign-in-alt"></i> LOGIN</button>
                 <div id="message" class="message"></div>
             </div>
             
             <div id="buttonsSection" class="buttons-section">
-                <button class="btn btn-1" onclick="redirectTo('https://pw-studyverse.vercel.app')">PW 1 - StudyVerse</button>
-                <button class="btn btn-2" onclick="redirectTo('https://pwthor.site/pw.html')">PW 2 - Thor Site</button>
-                <button class="btn btn-3" onclick="redirectTo('https://www.powerstudy.site/')">PW 3 - PowerStudy</button>
-                <button class="btn btn-4" onclick="redirectTo('https://pw-studyverse.vercel.app')">PW 4 - PW VERSE</button>
-            </div>
+                <button class="btn btn-1" onclick="redirectTo('https://pw-studyverse.vercel.app')">
+                    <i class="fas fa-graduation-cap"></i> PW 1 - StudyVerse
+                </button>
+                <button class="btn btn-2" onclick="redirectTo('https://pwthor.site/pw.html')">
+                    <i class="fas fa-bolt"></i> PW 2 - Thor Site
+                </button>
+                <button class="btn btn-3" onclick="redirectTo('https://www.powerstudy.site/')">
+                    <i class="fas fa-book"></i> PW 3 - PowerStudy
+                </button>
+                <button class="btn btn-4" onclick="redirectTo('https://pw-studyverse.vercel.app')">
+                    <i class="fas fa-star"></i> PW 4 - StudyVerse
+                </button>
             </div>
         </div>
         
         <div class="footer">
-            <p>Authorized access only. Unauthorized use is prohibited.</p>
+            <p><i class="fas fa-shield-alt"></i> Authorized access only. Unauthorized use is prohibited.</p>
         </div>
     </div>
 
